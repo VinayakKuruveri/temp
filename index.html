@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="sa">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>तर्कसङ्ग्रह — Text Viewer</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>तर्कसङ्ग्रह — Text Viewer</h1>
+    <p class="subtitle">Displaying content from ashtadhyayi-com/data — tarkasangraha/data.txt</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <input id="search" placeholder="Search topic, text or teeka…" aria-label="Search" />
+      <select id="categoryFilter">
+        <option value="">All categories</option>
+      </select>
+      <label class="toggle">
+        <input id="onlyWithTeeka" type="checkbox" />
+        <span>Only entries with टीका</span>
+      </label>
+    </section>
+
+    <section class="content">
+      <aside id="categories" class="sidebar" aria-label="Categories"></aside>
+      <section id="entries" class="entries" aria-live="polite"></section>
+    </section>
+
+    <footer>
+      <p>Source: <a href="https://github.com/ashtadhyayi-com/data/blob/c763a0d917ac16cbd85ba1caa938de642ec73071/tarkasangraha/data.txt" target="_blank" rel="noopener">ashtadhyayi-com/data — tarkasangraha/data.txt (commit c763a0d)</a></p>
+    </footer>
+  </main>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
