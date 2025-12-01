@@ -1,0 +1,93 @@
+/* Simple responsive styles for the Tarkasangraha viewer */
+:root{
+  --bg:#fffaf8;
+  --card:#fff;
+  --muted:#666;
+  --accent:#8b3a3a;
+  --border:#e6dcd8;
+  --shadow: 0 6px 18px rgba(0,0,0,0.06);
+  font-family: "Noto Sans Devanagari", "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#fffaf8, #fff);
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:20px;
+}
+
+header{
+  text-align:center;
+  margin-bottom:18px;
+}
+h1{margin:.2rem 0; color:var(--accent)}
+.subtitle{margin:0; color:var(--muted); font-size:0.95rem}
+
+.controls{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-bottom:12px;
+  flex-wrap:wrap;
+}
+.controls input[type="search"], .controls input[type="text"], .controls select{
+  padding:8px 10px;
+  border:1px solid var(--border);
+  border-radius:6px;
+  min-width:220px;
+  background:var(--card);
+}
+.toggle{display:flex;align-items:center;gap:8px;color:var(--muted); font-size:0.95rem}
+
+.content{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:18px;
+}
+.sidebar{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:12px;
+  box-shadow:var(--shadow);
+  max-height:70vh;
+  overflow:auto;
+}
+.sidebar h3{margin:0 0 8px 0}
+.category-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.category-list button{
+  text-align:left;
+  border:0;
+  background:transparent;
+  padding:6px;
+  border-radius:6px;
+  cursor:pointer;
+  color:#222;
+}
+.category-list button:hover{background:#fff1f1}
+
+.entries{min-height:300px}
+.entry{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:14px;
+  border-radius:8px;
+  margin-bottom:12px;
+  box-shadow:var(--shadow);
+}
+.entry .meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:0.92rem;margin-bottom:8px}
+.entry h2{margin:.2rem 0;font-size:1.15rem}
+.entry .text{white-space:pre-wrap;line-height:1.6}
+.teeka{margin-top:10px;padding:10px;border-left:4px solid var(--accent);background:#fffaf6}
+.small{font-size:0.9rem;color:var(--muted)}
+
+.empty{padding:26px;border:1px dashed var(--border);border-radius:8px;background:#fffefc;color:var(--muted)}
+
+@media (max-width:880px){
+  .content{grid-template-columns:1fr; }
+  .sidebar{order:2; max-height:none}
+}
